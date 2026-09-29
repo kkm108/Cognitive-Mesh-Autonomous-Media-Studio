@@ -5,10 +5,10 @@
   "type": "module",
   "description": "Decentralized agentic mesh for autonomous content production",
   "scripts": {
-    "start": "node mesh/bootstrap.js",
-    "dev": "node --watch mesh/bootstrap.js",
-    "test": "node --test tests/*.test.js",
-    "lint": "eslint mesh/ nodes/ router/ mcp/",
+    "start": "tsx mesh/bootstrap.ts",
+    "dev": "tsx watch mesh/bootstrap.ts",
+    "verify": "tsx verify-full.ts",
+    "verify:mesh": "tsx verify-mesh.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

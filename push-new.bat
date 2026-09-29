@@ -106,6 +106,20 @@ if not defined NAME (
   exit /b 1
 )
 
+REM ---- if this exact URL is already registered under another name, reuse it ----
+set "EXISTING="
+for /f "delims=" %%N in ('git remote') do (
+  for /f "delims=" %%U in ('git remote get-url %%N 2^>nul') do (
+    set "CU=%%U"
+    if /i "!CU:~-4!"==".git" set "CU=!CU:~0,-4!"
+    if /i "!CU!"=="!URL!" set "EXISTING=%%N"
+  )
+)
+if defined EXISTING if /i not "!EXISTING!"=="!NAME!" (
+  echo [info] this URL is already registered as remote "!EXISTING!" - reusing it
+  set "NAME=!EXISTING!"
+)
+
 REM ---- current branch ----
 set "BRANCH=main"
 for /f "delims=" %%B in ('git rev-parse --abbrev-ref HEAD 2^>nul') do set "BRANCH=%%B"

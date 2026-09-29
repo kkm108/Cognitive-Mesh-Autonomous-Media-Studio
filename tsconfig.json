@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "lib": ["ES2022"]
+  },
+  "include": ["mesh/**/*.ts", "nodes/**/*.ts", "router/**/*.ts", "mcp/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

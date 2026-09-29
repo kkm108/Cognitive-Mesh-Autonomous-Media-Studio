@@ -1,0 +1,11 @@
+# One repository per line. Lines starting with # are ignored.
+# Accepted forms:
+#   https://github.com/kkm108/repo-a.git
+#   kkm108/repo-b
+#   repo-c                      (needs: set GH_OWNER=kkm108)
+#
+# Then run:  push-new.bat --bulk repos.txt
+
+kkm108/repo-a
+kkm108/repo-b
+kkm108/repo-c
